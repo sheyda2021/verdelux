@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ *
+ * Verdelux — design tokens
+ * A warm, organic palette: deep forest greens, cream paper, a fresh
+ * leaf accent and a clay tone for prices / tags.
+ * ------------------------------------------------------------------ */
+@theme {
+  /* Greens pulled straight from the Figma design */
+  --color-forest: #437057;
+  --color-forest-deep: #092911;
+  --color-moss: #3f6b4f;
+  --color-leaf: #859f3d;         /* olive accent — borders, dots */
+  --color-leaf-bright: #a7c957;
+  --color-lime: #f6fcdf;         /* pale-lime page + heading text */
+  --color-cream: #f6fcdf;
+  --color-paper: #f6fcdf;
+  --color-sand: #e8e0d1;
+  /* Orange accent — the design's primary call-to-action */
+  --color-clay: #ffab4f;
+  --color-clay-soft: #ff923f;
+  --color-orange: #ffab4f;
+  --color-orange-deep: #ff923f;
+  --color-ink: #1e1e1e;
+  --color-muted: #5f6b5a;
+
+  --font-display: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Poppins", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-blob: 42% 58% 58% 42% / 45% 40% 60% 55%;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  ::selection {
+    background: var(--color-orange);
+    color: var(--color-forest-deep);
+  }
+  /* Consistent keyboard-focus ring across the whole app. Pointer clicks
+     stay clean (:focus-visible only), keyboard users get a clear outline. */
+  :focus-visible {
+    outline: 2px solid var(--color-orange);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  /* Small uppercase label used above section headings. */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-moss);
+  }
+  .eyebrow::before {
+    content: "";
+    width: 1.6rem;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.6;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 16px;
+    padding: 0.85rem 1.7rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: transform 0.25s ease, background-color 0.25s ease,
+      color 0.25s ease, box-shadow 0.25s ease;
+  }
+  .btn:active {
+    transform: translateY(1px);
+  }
+  /* Primary CTA — the design's orange pill */
+  .btn-primary {
+    background: var(--color-orange);
+    color: var(--color-ink);
+  }
+  .btn-primary:hover {
+    background: var(--color-orange-deep);
+    box-shadow: 0 14px 30px -12px rgba(255, 146, 63, 0.6);
+  }
+  /* Outlined button on dark banners */
+  .btn-outline {
+    background: rgba(46, 67, 52, 0.49);
+    border: 2px solid var(--color-leaf);
+    color: var(--color-lime);
+  }
+  .btn-outline:hover {
+    background: var(--color-leaf);
+    color: var(--color-forest-deep);
+  }
+  /* Neutral ghost for light sections */
+  .btn-ghost {
+    border: 1px solid rgba(67, 112, 87, 0.3);
+    color: var(--color-forest);
+  }
+  .btn-ghost:hover {
+    background: var(--color-forest);
+    color: var(--color-lime);
+  }
+
+  /* Frosted glassmorphism panel — used in the Blog section */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 20px 50px -30px rgba(0, 0, 0, 0.7);
+  }
+
+  .card-shadow {
+    box-shadow: 0 24px 60px -34px rgba(9, 41, 17, 0.5);
+  }
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s ease;
+  }
+  .link-underline:hover {
+    background-size: 100% 1px;
+  }
+
+  /* Explicit focus ring for interactive controls that sit on busy or dark
+     backgrounds (cart steppers, carousel dots) where the global outline
+     needs a little extra contrast to read. */
+  .focus-ring:focus-visible {
+    outline: 2px solid var(--color-orange);
+    outline-offset: 2px;
+  }
+}
