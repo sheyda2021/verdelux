@@ -1,8 +1,8 @@
 # Verdelux 🌿
 
-A pixel-perfect, front-end implementation of the **Verdelux** plant-shop design — built from a Figma design and turned into a fast, fully static React site. Three linked pages (Home ↔ Shop ↔ Product detail), a real working cart with persistence, and an accessible, animated UI.
+A pixel-perfect, front-end implementation of the **Verdelux** plant-shop design — built from my own Figma design and turned into a fast, fully static React site. Three linked pages (Home ↔ Shop ↔ Product detail), a real working cart with persistence, and an accessible, animated UI.
 
-> Design by **Sheyda Asadi**. Front-end build in React + TypeScript.
+> **Designed _and_ developed by [Sheyda Asadi](https://www.linkedin.com/in/sheyda-asadi-a171b2334/)** — I designed the UI in Figma, then built it myself as a front-end in React + TypeScript.
 
 ## ✨ Highlights
 
