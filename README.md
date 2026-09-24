@@ -87,7 +87,7 @@ Designed and built by **Sheyda Asadi** — a front-end developer who cares about
 I'm currently **open to front-end / React opportunities**. If you like this project, I'd love to connect:
 
 - ⭐ **Follow me on GitHub:** [@sheyda2021](https://github.com/sheyda2021)
-- 💼 **LinkedIn:** _add your profile link here_
+- 💼 **LinkedIn:** [Sheyda Asadi](https://www.linkedin.com/in/sheyda-asadi-a171b2334/)
 - ✉️ **Email:** sheida94asadi@gmail.com
 
 If this project caught your eye, a ⭐ on the repo and a follow mean a lot — and feel free to reach out about working together!
